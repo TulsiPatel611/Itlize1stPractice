@@ -9,7 +9,8 @@ public class MathUtilities{
    * @return the sum of the two numbers
    */
   public Integer add(Integer baseValue, Integer valueToAdd){
-      return null;
+      int sum = baseValue + valueToAdd;
+      return sum;
   }
 
   /**
@@ -19,7 +20,8 @@ public class MathUtilities{
    * @return the sum of the two numbers
    */
   public Double add(Double baseValue, Double valueToAdd){
-      return null;
+      double sum = baseValue + valueToAdd;
+      return sum;
   }
 
   /**
@@ -28,7 +30,8 @@ public class MathUtilities{
    * @return the half of the number in double
    */
   public Double half(Integer number) {
-      return null;
+      double halfValue = (double)(number / 2);
+      return halfValue;
   }
 
   /**
@@ -37,7 +40,12 @@ public class MathUtilities{
    * @return true if the number is odd, false if it is even
    */
   public Boolean isOdd(Integer number){
-      return null;
+      boolean result = false;
+      
+      if (number % 2 != 0) {
+          result = true;
+      }
+      return result;
   }
 
 
@@ -47,7 +55,19 @@ public class MathUtilities{
    * @return the result of the number multiply by itself
    */
   public Integer square(Integer number) {
-      return null;
+      int square = number * number;
+      return square;
   }
+  
+  public static void main (String[] args) {
+
+          MathUtilities mathUtil = new MathUtilities();
+
+          System.out.println("Sum of Integer Values = " + mathUtil.add(10,10));
+          System.out.println("Sum of Double Values = " + mathUtil.add(2.50d, 2.50d));
+          System.out.println("Half Value of the number = " + mathUtil.half(60));
+          System.out.println("Is number Odd? = " + mathUtil.isOdd(60));
+          System.out.println("Sqaure of the number = " + mathUtil.square(4));
+      }
 
 }

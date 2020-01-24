@@ -1,5 +1,3 @@
- 
-
 public class LoopFun
 {
 
@@ -10,7 +8,16 @@ public class LoopFun
        * @return the factorial of the number
        */
       public Integer factorial(Integer number){
-          return null;
+          int factorial = 1;
+
+          if (number == 0 || number == 1) {
+              return 1;
+          }
+
+          for (int i = 2; i <= number; i++) {
+              factorial = factorial * i;
+          }
+          return factorial;
       }
 
       /**
@@ -21,7 +28,13 @@ public class LoopFun
        * @return Upper case string of the first letter of each word
        */
       public String acronym(String phrase) {
-          return null;
+          String[] arrOfPhrase = phrase.split(" ");
+          String acronym = "";
+          
+          for (String str : arrOfPhrase) {
+              acronym = acronym + str.charAt(0);
+          }
+          return acronym.toUpperCase();
       }
 
       /**
@@ -37,6 +50,35 @@ public class LoopFun
        * @return the encrypted string by shifting each character by three character
        */
       public String encrypt(String word) {
-          return null;
+          String[] arrOfWord = word.split("");
+          String encryptedMessage = "";
+          
+          for (String s : arrOfWord) {
+              
+              int asciiValue = (int)(s.charAt(0));
+              asciiValue += 3;
+                
+              char c = (char)asciiValue;
+              
+              if (c > 'z') {
+                  char ch = (char)(asciiValue - 26);
+                  encryptedMessage = encryptedMessage + ch;
+              }
+                
+              else {
+                encryptedMessage = encryptedMessage + c;
+              }
+          }
+          
+          return encryptedMessage;
+      }
+      
+      public static void main (String[] args) {
+
+          LoopFun loopFunObj = new LoopFun();
+
+          System.out.println("Factorial = " + loopFunObj.factorial(5));
+          System.out.println("Acronym = " + loopFunObj.acronym("Ruby on Rails"));
+          System.out.println("Encrypted Message = " + loopFunObj.encrypt("wxyz"));
       }
 }
